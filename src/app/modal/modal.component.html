@@ -15,7 +15,7 @@
               <a class="nav-link active" id="mdb-tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="mdb-tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Register</a>
+              <a (click)="modalRef.close()" routerLink="/About" class="nav-link" id="mdb-tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Register</a>
             </li>
           </ul>
           <!-- Pills navs -->
@@ -24,26 +24,7 @@
           <div class="tab-content">
             <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="mdb-tab-login">
               <form>
-                <div class="text-center mb-3">
-                  <p>Sign in with:</p>
-                  <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-facebook-f"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-twitter"></i>
-                  </button>
-
-                  <button type="button" class="btn btn-primary btn-floating mx-1">
-                    <i class="fab fa-github"></i>
-                  </button>
-                </div>
-
-                <p class="text-center">or:</p>
+               
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
@@ -77,9 +58,7 @@
                 <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
                 <!-- Register buttons -->
-                <div class="text-center">
-                  <p class="mb-1">Not a member? <a href="#!">Register</a></p>
-                </div>
+ 
               </form>
             </div>
             <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="mdb-tab-register">

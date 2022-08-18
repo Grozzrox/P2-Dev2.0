@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesService } from './Services/courses.service';
+import { CourseComponent } from './courses/course/course.component';
+import { GamesComponent } from './games/games.component';
+import { SearchComponent } from './search/search.component';
+import { GameComponent } from './games/game/game.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -23,10 +35,31 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './modal/modal.component';
 
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'Home', component: HomeComponent},
+  {path: 'Game', component: GameComponent},
+  {path: 'Discover', component: DiscoverComponent},
+  {path: 'Games', component: GamesComponent},
+  {path: 'About', component: AboutComponent},
+  {path: 'Contact', component: ContactComponent},
+  {path: 'Courses', component: CoursesComponent},
+  {path: 'Course/:id', component: CourseComponent}
+]
+
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
+    ModalComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    CoursesComponent,
+    CourseComponent,
+    GamesComponent,
+    SearchComponent,
+    GameComponent,
+    DiscoverComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +79,10 @@ import { ModalComponent } from './modal/modal.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

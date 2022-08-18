@@ -1,158 +1,41 @@
-<!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid justify-content-between">
-    <!-- Left elements -->
-    <div class="d-flex">
-      <!-- Brand -->
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-        <img
-          src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
-          height="20"
-          alt=""
-          loading="lazy"
-          style="margin-top: 2px;"
-        />
-      </a>
 
-      <!-- Search form -->
-      <form class="input-group w-auto my-auto d-none d-sm-flex">
-        <input
-          autocomplete="off"
-          type="search"
-          class="form-control rounded"
-          placeholder="Search"
-          style="min-width: 125px;"
-        />
-        <span class="input-group-text border-0 d-none d-lg-flex"
-          ><i class="fas fa-search"></i
-        ></span>
-      </form>
-    </div>
-    <!-- Left elements -->
 
-    <!-- Center elements -->
-    <ul class="navbar-nav flex-row d-none d-md-flex">
-      <li class="nav-item me-3 me-lg-1 active">
-        <a class="nav-link" href="#">
-          <span><i class="fas fa-gamepad"></i></span>
-          Games
-        </a>
-      </li>
-
-      <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link" href="#">
-          <span><i class="fas fa-users fa-lg"></i></span>
-          Reviews
-        </a>
-      </li>
-    </ul>
-    <!-- Center elements -->
-
-    <!-- Right elements -->
-    <ul class="navbar-nav flex-row">
-      <li class="nav-item me-3 me-lg-1">
-        <a (click)="openModal()" class="nav-link d-sm-flex align-items-sm-center" href="#">
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/1.webp"
-            class="rounded-circle"
-            height="22"
-            alt=""
-            loading="lazy"
-          />
-          <strong class="d-none d-sm-block ms-1">Login</strong>
-        </a>
-      </li>
-      <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link" href="#">
-          <span><i class="fas fa-plus-circle fa-lg"></i></span>
-        </a>
-      </li>
-      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">
-        <a
-          class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          mdbDropdownToggle
-          aria-expanded="false"
-        >
-          <i class="fas fa-comments fa-lg"></i>
-
-          <span class="badge rounded-pill badge-notification bg-danger">6</span>
-        </a>
-        <ul
-          mdbDropdownMenu
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-        </ul>
-      </li>
-      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">
-        <a
-          class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          mdbDropdownToggle
-          aria-expanded="false"
-        >
-          <i class="fas fa-bell fa-lg"></i>
-          <span class="badge rounded-pill badge-notification bg-danger">12</span>
-        </a>
-        <ul
-          mdbDropdownMenu
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-        </ul>
-      </li>
-      <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">
-        <a
-          class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          mdbDropdownToggle
-          aria-expanded="false"
-        >
-          <i class="fas fa-chevron-circle-down fa-lg"></i>
-        </a>
-        <ul
-          mdbDropdownMenu
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <!-- Right elements -->
+<div class="main-container">
+  <div class="main_header">
+      <ul>
+          <div class="logo active">
+              <li>BGE</li>
+          </div>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
+          <!-- localhost:4200/Home -->
+          <li routerLinkActive="active"><a routerLink="/Discover">Discover</a></li><!-- localhost:4200/About -->
+          <li routerLinkActive="active"><a routerLink="/Games">Browse</a></li><!-- localhost:4200/Contact -->
+          <li routerLinkActive="active"><a routerLink="/Courses">Review</a></li><!-- localhost:4200/Courses -->
+          <div class="login_header">
+              <li routerLinkActive="active"><a (click)="openModal()" routerLink="/Courses">Login</a></li>
+              <li routerLinkActive="active"><a routerLink="/About">Signup</a></li>
+          </div>
+      </ul>
   </div>
-</nav>
-<!-- Navbar -->
+  <div class="search_bar">
+      <form class="search_form" role="search">
+          <div class="search_input_area">
+              <input class="search_input" type="text" role="searchbox" placeholder="Search through games">
+          </div>
+          <div class="drop_down">
+              <!-- Drop down suggestion -->
+              <div class="dropdown" id="dropdown-container">
+                  <div class="dropdown_button" role="button" tabindex="0"></div>
+              </div>
+          </div>
+      </form>
+  </div>
+  <br>
+  <div class="component-container">
+      <!-- <app-home></app-home>
+      <app-about></app-about>
+      <app-contact></app-contact>
+      <app-courses></app-courses> -->
+      <router-outlet></router-outlet>
+  </div>
+</div>

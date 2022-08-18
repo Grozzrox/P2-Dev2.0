@@ -6,7 +6,54 @@
  
 @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
 
+*{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
 body {
-    background-color: black;
-    color: lime;
+    font-family: "Bahnschrift", sans-serif;
+    font-stretch: condensed;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+.background{
+    background: no-repeat center center fixed;
+    background: black;
+    background: radial-gradient(ellipse at center, rgb(0, 25, 1) 2%,rgb(0, 15, 2) 40%, rgb(0, 10, 2) 70%, black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.active{
+    color: white;
+    text-shadow:
+    0 0 2px #00CC00,
+    0 0 3px #00AA00,
+    0 0 4px #009400,
+    0 0 5px #006900,
+    0 0 10px #003600,
+    0 0 15px #001b00;
+}
+
+.heading {
+    font-size: 45px;
+    font-stretch: ultra-expanded;
+    text-shadow:
+    0 0 1px #001b00,
+    0 0 2px #006900,
+    0 0 3px #00AA00,
+    0 0 4px #009400,
+    0 0 5px #006900,
+    0 0 10px #003600,
+    0 0 15px #001b00;
 }

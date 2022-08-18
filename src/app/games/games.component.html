@@ -1,0 +1,10 @@
+<div class="container">
+    <h1 class="heading">All Games</h1>
+    <!-- <ng-container *ngFor="let game of games">
+        <app-game></app-game>
+    </ng-container> -->
+    <app-game
+        *ngFor="let game of games"
+        [game]="game"
+    ></app-game>
+</div>
