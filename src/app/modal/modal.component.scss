@@ -5,6 +5,15 @@
     border-radius: 1px;
 }
 
+.form-outline label {
+    color: black;
+    text-shadow: none;
+}
+
+.form-check label, a {
+    text-shadow: none;
+}
+
 .btn-close {
     padding: 15px;
 }
